@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alberto's Portfolio</title>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/cvscript.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/cvstyle.css">
+    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+
+    <!-- Bootstrap bindings -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+</head>
+
+<ul class="topnav" id="myTopnav">
+  <li id="navhome"><a href="#summary">Alberto Nieto</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#stack">Software Stack</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="https://github.com/Qberto">GitHub</a></li>
+  <li><a href="https://qberto.github.io">Home</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
+
+<body>
+
+<!-- Opaque overlay for image browser -->
+<div id="overlay"></div>
+
+<!-- Banner -->
+<!-- <div id="header">
+    <div id="menu">
+        <h2 style="margin: 0px;">Alberto Nieto, GIS Developer</h2>
+    </div>
+</div> -->
+
+<!-- Frame for image browser -->
+<div id="frame">
+    <table id="frame-table">
+        <tr>
+            <td id="left">
+                <img src="img/left.png" alt="left"/>
+            </td>
+            <td id="right">
+                <img src="img/right.png" alt="right"/>
+            </td>
+        </tr>
+    </table>
+    <img id="main" src="" alt=""/>
+</div>
+
+<!-- Summary Header -->
+<div id="summary" class="narrative">
+    <h1>Summary</h1>
+        <p>My experience in development of back-end and front-end solutions to enable GIS analysis powers high-quality results. Nine years of GIS experience in development and analysis roles in the financial, meteorological, and operations environments bring the ability to adapt to any role while maintaining deliverables that surpass customer expectations.</p>
+</div>
+
+<div id="portfolio" class="narrative">
+    <h1>Sample Work</h1>
+        
+</div>
+
+<div id="tapvsdiv_storymap" class="narrative appcontainer" style="margin: 0 auto;">
+    <h2 style="padding-left: 3%">Front-end GIS Application</h2>
+    <iframe width="100%" height="800px" src="https://www.arcgis.com/apps/StorytellingSwipe/index.html?appid=ca221cf09f664c05b5a3f59510fe0fd0"></iframe>
+    <div id="sm_desc_parent">
+        <div class="sm_desc_childleft" style="width: 45%">
+        <h3>Tapestry Segmentation (left):</h3>
+        <p>
+            This map service shows the dominant lifestyle segment in an area in 2012, based on <a href="https://www.esri.com/data/esri_data">Esri's Tapestry Segmentation system</a>. The map displays the dominant segment's LifeMode summary group color. The "dominant" segment is most useful at tract and block group levels.<br><br> 
+
+            Tapestry Segmentation, Esri's geodemographic market segmentation system, classifies U.S. neighborhoods into <a href="http://www.esri.com/library/fliers/pdfs/tapestry_segmentation.pdf">65 segments</a> based on their socioeconomic and demographic composition. For a broader view of markets, segments are grouped into 12 LifeMode Summary Groups that reflect lifestyles/life stages and 11 Urbanization Summary Groups that show levels of affluence and population density. 
+        </p>
+        </div>
+
+        <div class="sm_desc_childright" style="width: 45%">
+        <h3>Diversity Index (right):</h3>
+        <p>
+            This map service summarizes racial and ethnic diversity in the United States in 2012. The Diversity Index shows the likelihood that two persons chosen at random from the same area, belong to different race or ethnic groups. The index ranges from 0 (no diversity) to 100 (complete diversity). Diversity in the U.S. population is increasing. The diversity score for the entire United States in 2012 is 61.<br><br>
+
+            The data shown is from <a href="http://www.esri.com/data/esri_data">Esri's 2012 Updated Demographics</a>. The map adds increasing level of detail as you zoom in, from state, to county, to ZIP Code, to tract, to block group data. This map shows Esri's 2012 estimates using Census 2010 geographies.
+        </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="cpcjawf" class="narrative appcontainer" style="margin-top: 40px;">
+    <h2 style="padding-left: 3%">Back-end GIS Application</h2>
+    <h3 style="padding-left: 3%"><a href="http://www.usda.gov/oce/weather/pubs/Weekly/Wwcb/wwcb.pdf"> Joint Agricultural Weather Facility (JAWF) Publication</a></h3>
+
+    <div id="wrapper">
+        <ul id="imgportfolio">
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/cltrain.png" alt="img"/></li>
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/clravt.png" alt="img"/></li>        
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/clrtanom.png" alt="img"/></li>
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/1cpcp0.png" alt="img"/></li>
+
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/wcmax15.png" alt="img"/></li>
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/wcpcp1.png" alt="img"/></li>
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/wctan1.png" alt="img"/></li>
+            <li><img src="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/wcpcp7.png" alt="img"/></li>
+        </ul>
+    </div>
+
+    <div style="padding: 3%">
+        <h3><a href="http://www.cpc.ncep.noaa.gov/products/JAWF_Monitoring">NOAA-Climate Prediction Center Products for the JAWF) Publication</a></h3>
+        <p>
+            The Mission of JAWF is to keep the Nation's growers, exporters, USDA commodity analysts, as well as the Secretary and top staff informed of worldwide weather developments and their effects on crops and livestock.
+
+            NWS meteorologists provide global weather data, products, and expertise in interpretation of forecast models.
+            USDA agricultural meteorologists merge the NWS information with climatological analyses and global agronomic data to arrive at the weather impact on agricultural production.
+        </p>
+        </div>
+
+</div>
+
+
+
+<div class="narrative">
+
+    <h1 style="margin-top: 30px;" id="skills">Applicable Skills</h1>
+        <ul>
+            <li type="square">
+            Skilled GIS programmer with experience in configuration management and process engineering.
+            </li>
+            <li type="square">
+            Cultivated with the importance of maintaining the availability and high quality of spatial data for all users that rely on GIS products to direct resources and improve decision-making processes.
+            </li>
+            <li type="square">
+            Skillful user and administrator of GIS applications, including ESRI ArcGIS (ArcMAP, ArcCatalog, ArcGIS Server).
+            </li>
+            <li type="square">
+            Ability to understand complex tasks and provide high quality results within required timeframes.
+            </li>
+            <li type="square">
+            Proficient at adapting to work structures requiring both team collaboration and individual initiative.
+            </li>
+        </ul>
+
+    <h1 style="margin-top: 70px;" id="stack">Software Stack</h1>
+    
+        <h3>GIS Software Use and Administration:</h3>
+        <p>ESRI - ArcGIS for Desktop (ArcMap, ArcGIS Pro, ArcCatalog, License Administrator), ArcGIS for Server (ArcSDE, REST API), Portal for ArcGIS + WebAdaptor, WebAppBuilder, OpenGEO (QGIS, GeoServer, PostGIS), GDAL/OGR, GrADS, ERDAS IMAGINE, Census Proprietary GIS (GATRES).</p>
+
+        <h3>Programming/Development:</h3>
+        <p>Python 2.7/3.4 (Standard Library, Anacondas; Pandas; Numpy; iPython, Arcpy, Matplotlib), Javascript (jQuery; Dojo; ArcGIS Javascript API; Node.js; Reveal.js), HTML5, CSS, Qt, Linux BASH/CSH, Windows batch programming, GitHub, SQL, VB
+        </p>
+
+        <h3>Database Administration:</h3>
+        <p>PostgreSQL (ArcSDE); SQL Server; SQL Lite; MongoDB
+        </p>
+
+        <h3>Data Formats:</h3>
+        <p>
+        Local: Feature Class / Feature Dataset / File Geodatabase / Enterprise Geodatabase, Shapefiles, Raster, NetCDF, GRIB2, XML, CSV, JSON
+        </p>
+        <p>
+        Web: Feature Services / Map Services, OGC Standard Services (WMS, WFS, WCS), geoJSON, JSON
+        </p>
+
+        <h3>General:</h3>
+        <p>
+        IIS, Microsoft Word, Visio, Powerpoint, Excel, Outlook, Access, Filemaker Pro, Flash MX, Adobe Illustrator, Photoshop, Acrobat, HTML, Autodesk Inventor. System administration of Linux, Windows, Mac.
+        </p>
+
+    <h1 style="margin-top: 70px;" id="experience">Professional Experience</h1>
+
+        <h2>Capital One Financial Corporation – GIS Developer (July 2014 - Present)</h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Develops back-end Python customized solutions to improve the productivity and capabilities of GIS analysis teams.
+            </li>
+            <li type="square">
+                Develops front-end web applications via the ArcGIS JavaScript API customized solutions to disseminate geospatial analytical outputs to decision-makers in effective and evocative solutions.
+            </li>
+            <li type="square">
+                Translates business logic into functioning programs that efficiently and reliably turn inputs into outputs needed for critical organization functions.
+            </li>
+            <li type="square">
+                Expands the capabilities of the standard ESRI stack via development of Python toolboxes/add-ins and JavaScript applications.
+            </li>
+            <li type="square">
+                Produces automated solutions for time-consuming and error-prone tasks ranging from mass production of￼mapping products to spatial data management.
+            </li>
+            <li type="square">
+                Perform database administration of a PostgreSQL enterprise geodatabase hosting authoritative data that is documented and automatically refreshed.
+            </li>
+        </ul>
+        <h4>Accomplishments</h4>
+        <ul>
+            <li type="square">
+                Delivered a best-in-class set of Location Analytics customized tools that enables decision makers to efficiently and accurately answer questions related to spatial relationships that affect long-term business decisions.
+            </li>
+            <li type="square">
+                Developed applications to easily query, display, analyze, and plot all spatial data available to Capital One for use in leadership meetings where decisions that affect the future of the company are made.
+            </li>
+            <li type="square">
+                Automated workflows that released crucial team resources for other tasks.
+            </li>
+            <li type="square">
+                Developed complex GIS packages to produce mass production of spatial analysis, specialized outputs, and supporting analytical documentation.
+            </li>
+            <li type="square">
+                Gathered feedback and input from field users of web applications for improvement of web-based GIS data management and collection.
+            </li>
+        </ul>
+        <h4>Skills Applied</h4>
+        <ul>
+            <li type="square">
+                Python 2.7: Arcpy; Python standard library; customized library of functions for Capital One workflows
+            </li>
+            <li type="square">
+                Javascript: jQuery, Dojo, Node.js, Reveal.js; HTML; CSS
+            </li>
+            <li type="square">
+                Scientific data computing packages (Anacondas - Pandas, Numpy, matplotlib) in the development and research of improved predictive spatial analysis tools.
+            </li>
+            <li type="square">
+                Experienced with the use of a variety of spatial data formats, including: File Geodatabase feature classes, KML/KMZ, WMS, WFS, and WCS.
+            </li>
+        </ul>
+
+
+        <h2>Innovim LLC – GIS Developer/Analyst at NOAA Climate Prediction Center (November 2013 – July 2014)</h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Developed scripted processing and user editing workflows that allow the manipulation of climate data into spatial GIS formats for the benefit of the public and enhanced decision making.
+            </li>
+            <li type="square">
+                Maintained and administered the GIS programs and processing workflows that provide operational spatial products for United States government agencies.
+            </li>
+            <li type="square">
+                Responsible for geoprocessing and visualization of spatial datasets for the USDA Weekly Weather and Crop Bulletin for the Joint Agricultural Weather Facility (JAWF) products.
+            </li>
+            <li type="square">
+                Created custom Python geoprocessing and publishing tools in the ArcGIS environment to assist in Meteorologist use of GIS programs.
+            </li>
+            <li type="square">
+                Maintained python and linux shell scripts that handle data workflows from intake to the center to dissemination to the public.
+            </li>
+            <li type="square">
+                Provided administrative and troubleshooting assistance for a deployment of ArcGIS for Server 10.1 in Linux RHEL6.
+            </li>
+            <li type="square">
+                Participated in NOAA large-scale GIS enterprise research and development meetings; discussing integration of a variety of data processing initiatives into a single enterprise solution.
+            </li>
+        </ul>
+        <h4>Skills Applied</h4>
+        <ul>
+            <li type="square">
+                Python 2.7 programming and Arcpy geoprocessing functions to develop complex, automated workflows that process and allow manipulation of spatial data for NOAA operational products.
+            </li>
+            <li type="square">
+                Experienced with the use of a variety of spatial data formats, including: Shapefiles, Raster/Vector, File Geodatabase feature classes, raster mosaics, KML/KMZ, and OGC Standard Services (WMS, WFS, WCS).
+            </li>
+            <li type="square">
+                Provides professional documentation of operational GIS programs, including user interaction guidelines and standard operational procedures for maintenance of each program.
+            </li>
+        </ul>
+
+        <h2>ASRC Space and Defense – POES Ground System Engineer at NOAA Satellite Operations Facility (Sept. 2012 – Oct. 2013)</h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Supported POES ground system engineering functions to include Wallops and Fairbanks CDA stations, NASA to NOAA interfaces; telemetry and command systems; and analysis support systems.
+            </li>
+            <li type="square">
+                Maintained the quality and availability of POES satellite products for NOAA’s data processing organizations.
+            </li>
+            <li type="square">
+                Assisted in the integration, regression testing, and final implementation of new or upgraded ground systems into satellite operations.
+            </li>
+            <li type="square">
+                Monitored ground system performance and responded to anomalies during on and off duty hours.
+            </li>
+            <li type="square">
+                Developed and administered processes and databases that enable coordination among operations personnel.
+            </li>
+            <li type="square">
+                Maintained anomaly and satellite scheduled events database for controllers and NOAA Engineering.
+            </li>
+            <li type="square">
+                Participated in NOAA large-scale GIS enterprise research and development meetings; discussing integration of a variety of data processing initiatives into a single enterprise solution.
+            </li>
+        </ul>
+
+        <h2>ASRC Aerospace – GIS Data Configuration Management at NOAA Satellite Operations Facility (Sept. 2012 – Oct. 2013)</h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Applied the ITIL configuration management practices of planning, identification, control, status accounting, and auditing to mission operations configured items for the POES, GOES, and NPP missions.
+            </li>
+            <li type="square">
+                Used process engineering methods that standardized engineering processes into stable, repeatable, and productive sequences of actions, helping produce desired results from limited resources.
+            </li>
+            <li type="square">
+                Designed spatial process flow diagrams and metrics that identified and mitigated operational issues.
+            </li>
+            <li type="square">
+                Conducted management-level meetings to identify, analyze, and communicate process improvement initiatives that save the organization time, resources, and reduce operational risk.
+            </li>
+        </ul>
+
+        <h2>ASRC Research and Technology Solutions - GIS Technician at U.S. Census Bureau (October 2011 – August 2012)
+        </h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Performed analysis and technical corrections of Census TIGER/line files using remotely sensed data.
+            </li>
+            <li type="square">
+                Maintained and developed geospatial databases for several GIS projects and applications.
+            </li>
+            <li type="square">
+                Completed QA/QC of boundary correction GIS work by ASRC staff for Census spatial data.
+            </li>
+            <li type="square">
+                Created daily status reports detailing progress in a variety of GIS projects for operation leads.
+            </li>
+            <li type="square">
+                Achieved fastest and highest spatial cell completion count for GIS staff in quality control verification project. 
+            </li>
+            <li type="square">
+                Trained new ASRC staff on ArcGIS, GATRES, and Access Database use for Census GIS projects.
+            </li>
+        </ul>
+
+        <h2>Alachua County Environmental Protection Department - GIS Specialist (January 2009 – December 2009)
+        </h2>
+        <h4>Responsibilities</h4>
+        <ul>
+            <li type="square">
+                Provided planners with geostatistical data of land use changes in conservation easements.
+            </li>
+            <li type="square">
+                Participated in government meetings that discussed land use and urban planning policy. 
+            </li>
+            <li type="square">
+                Georeferenced engineering blueprints for digital storage of land-use data.
+            </li>
+            <li type="square">
+                Gathered data on the field using Trimble GPS unit for accurate assessment of land-use change.
+            </li>
+        </ul>
+
+    <h1 style="margin-top: 70px;" id="education">Education and Academic Experience</h1>
+
+        <h3>University of Florida (August 2005 – August 2009)</h3>
+        <ul>
+            <li type="square">Bachelor of Arts - Geography, Concentration: GIS, Remote Sensing, Urban Planning</li>
+            <li type="square">Degree GPA of 3.75; Dean’s List recognition every semester from 2007-2009.</li>
+            <li type="square">Created an award-winning project determining the most advantageous locations for an expansion of the Jacksonville Skyway metrorail using Landsat remotely sensed data and ArcGIS.</li>
+            <li type="square">Designed several economic, demographic, and environmental projects that assisted government decision-making for application of limited resources.</li>
+            <li type="square">Invited to present GIS Development best practices at 2016 Geographic Symposium.</li>
+        </ul>
+
+    <h2 style="margin-top: 70px;">Links</h2>
+
+        <p></p><a href="https://github.qberto.io"> github.qberto.io</a></p>
+
+        <p></p><a href="http://www.usda.gov/oce/weather/pubs/Weekly/Wwcb/wwcb.pdf"> USDA/NOAA - Joint Agricultural Weather Facility</a></p>
+
+        <p></p><a href="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/regional_monitoring/"> NOAA Climate Prediction Center - JAWF Regional Monitoring</a></p>
+
+        <p></p><a href="http://www.cpc.ncep.noaa.gov/products/GIS/GIS_DATA/"> NOAA Climate Prediction Center GIS Data</a></p>
+
+</div>
+
+</body>
+</html>

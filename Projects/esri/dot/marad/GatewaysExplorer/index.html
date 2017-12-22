@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Gateways Explorer</title>
+
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/themes/calcite/dijit/calcite.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/themes/calcite/esri/esri.css">-->
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/dark/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/light-blue/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/dark-blue/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/light-green/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/dark-green/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/light-purple/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/dark-purple/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/light-red/main.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/themes/dark-red/main.css">-->
+
+    <script src="https://js.arcgis.com/4.3/"></script>
+
+    <script>
+        require([
+                    "esri/Map",
+                    "esri/views/MapView",
+                    "esri/layers/FeatureLayer",
+
+                    "esri/widgets/LayerList",
+                    "esri/layers/GroupLayer",
+                    "esri/widgets/Legend",
+                    "esri/widgets/BasemapToggle",
+                    "esri/widgets/Locate",
+                    "esri/widgets/Home",
+                    "esri/widgets/Print",
+                    "esri/widgets/Search",
+
+                    "dijit/a11yclick",
+
+                    "dojo/on",
+                    "dojo/dom",
+                    "dojo/dom-attr",
+                    "dojo/dom-construct",
+                    "dojo/domReady!"
+                ],
+                function(
+                        Map, MapView,
+                        FeatureLayer,
+                        LayerList,
+                        GroupLayer,
+                        Legend,
+                        BasemapToggle,
+                        Locate,
+                        Home,
+                        Print,
+                        Search,
+                        a11yclick,
+                        on,
+                        dom, domAttr, domConstruct
+                ) {
+
+                    /********************
+                     * Set up Map and View
+                     ********************/
+
+                    var map = new Map({
+                        basemap: "streets-night-vector"
+                    });
+
+                    var view = new MapView({
+                        container: "sceneDiv",
+                        map: map,
+                        center: [-98.5795, 39.8282],
+                        zoom: 4,
+                        padding: {
+                            left: 300
+                        }
+                    });
+
+                    /********************
+                     * Set up Widgets
+                     ********************/
+
+                    // Add Locate Widget
+                    var locateBtn = new Locate({
+                        view: view
+                    });
+
+                    // Create the basemap widget
+                    var toggle = new BasemapToggle({
+                        // 2 - Set properties
+                        view: view, // view that provides access to the map's current basemap
+                        nextBasemap: "streets-navigation-vector" // allows for toggling of basemap
+                    });
+
+                    // Create and add home widget
+                    var homeBtn = new Home({
+                        view: view
+                    });
+
+                    var layerList = new LayerList({
+                        view: view
+                    });
+
+                    var searchWidget = new Search({
+                        view: view
+                    });
+
+
+//                    var printWidget = new Print({
+//                        view: view,
+//                        printServiceUrl: "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+//                    });
+
+                    /********************
+                     * Add Widgets to View UI
+                     ********************/
+
+                    view.ui.add(layerList, "top-right");
+
+                    view.ui.add(homeBtn, "top-left");
+
+                    // Add the locate widget to the top left corner of the view
+                    view.ui.add(locateBtn, "top-left");
+
+                    // Add basemap widget to the top left corner of the view
+                    view.ui.add(toggle, "top-left");
+
+//                    // Add print widget to the view
+//                    view.ui.add(printWidget, "bottom-left");
+
+                    /********************
+                     * Popup Templates
+                     ********************/
+
+                    // Create the PopupTemplate
+                    var gatewaysPopupTemplate = {
+                        title: "Gateway Office: {GATEWAY}"
+                    };
+
+                    var statesPopupTemplate = {
+                        title: "{STATE}",
+                        content: "<p><b> Gateway: {GATEWAY} </b></p>" +
+                        "<p> Director: {DIRECTOR}</p>"
+                    };
+
+
+                    /********************
+                     * FeatureLayers
+                     ********************/
+
+                    // Create the FeatureLayer using the popupTemplate
+                    var gatewaysLayer = new FeatureLayer({
+                        // url: "https://services.arcgis.com/hRUr1F8lE8Jq2uJo/arcgis/rest/services/MARAD_Gateways/FeatureServer/0",
+                        url: "https://services.arcgis.com/hRUr1F8lE8Jq2uJo/arcgis/rest/services/MARAD_Gateways_Editable/FeatureServer/0",
+                        title: "MARAD Gateways",
+                        outFields: ["*"],
+                        popupTemplate: gatewaysPopupTemplate,
+                        visible: true
+                    });
+                    map.add(gatewaysLayer);
+
+                    var statesLayer = new FeatureLayer({
+                        url: "https://services.arcgis.com/hRUr1F8lE8Jq2uJo/arcgis/rest/services/MARAD_Gateways/FeatureServer/1",
+                        title: "States",
+                        outFields: ["*"],
+                        popupTemplate: statesPopupTemplate,
+                        visible: true
+                    });
+                    map.add(statesLayer);
+
+                    // view.ui.add(searchWidget, {
+                    //     position: "bottom-left",
+                    //     sources: [{
+                    //         featureLayer: groupsLayer,
+                    //         searchFields: ['group_name'],
+                    //         displayField: 'group_name',
+                    //     }]
+                    // });
+
+                    var graphics;
+
+                    /********************
+                     * Create navigation list
+                     ********************/
+
+
+                    var listNode = dom.byId("section_graphics");
+
+                    // Logic to load listLayer features in listNode
+                    view.whenLayerView(gatewaysLayer).then(function(lyrView) {
+                        lyrView.watch("updating", function(val) {
+                            if (!val) { // wait for the layer view to finish updating
+
+                                // query all the features available for drawing.
+                                lyrView.queryFeatures().then(function(results) {
+
+                                    graphics = results;
+
+                                    var fragment = document.createDocumentFragment();
+
+                                    results.forEach(function(result, index) {
+                                        var attributes = result.attributes;
+                                        var name = attributes.GATEWAY
+
+                                        // Create a list zip codes in NY
+                                        domConstruct.create("li", {
+                                            className: "panel-result",
+                                            tabIndex: 0,
+                                            "data-result-id": index,
+                                            textContent: name
+                                        }, fragment);
+                                    });
+                                    domConstruct.place(fragment, listNode, "only");
+                                });
+                            }
+                        });
+                    });
+
+                    // listen to click event on the listLayer list
+                    on(listNode, on.selector("li", a11yclick), function(event) {
+                        var target = event.target;
+                        var resultId = domAttr.get(target, "data-result-id");
+
+                        // get the graphic corresponding to the clicked listLayer item
+                        var result = resultId && graphics && graphics[parseInt(resultId,
+                                        10)];
+
+                        if (result) {
+                            // open the popup at the centroid of micromarket polygon
+                            // and set the popup's features which will populate popup content and title.
+                            view.popup.open({
+                                features: [result],
+                                location: result.geometry.centroid
+                            });
+
+//                            view.center = result.geometry.centroid;
+//                            view.zoom = 8;
+//                            view.extent = result.geometry;
+
+                            view.goTo(result.geometry.extent);
+                        }
+                    });
+
+                });
+    </script>
+
+    <style>
+        html,
+        body,
+        #sceneDiv {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .panel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .panel-side {
+            padding: 2px;
+            box-sizing: border-box;
+            width: 300px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            overflow: auto;
+            z-index: 60;
+        }
+
+        .panel-side h2 {
+            padding: 0 20px;
+            margin: 20px 0;
+        }
+
+        .panel-side ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .panel-side li {
+            list-style: none;
+            padding: 10px 20px;
+        }
+
+        .panel-result {
+            cursor: pointer;
+            margin: 2px 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-result:hover,
+        .panel-result:focus {
+            color: orange;
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+    </style>
+
+</head>
+
+<body class="calcite">
+<div class="panel-container">
+    <div class="panel-side">
+        <h2>Maritime Administration Gateways</h2>
+        <ul id="section_graphics">
+            <li>Loading Gateways&hellip;</li>
+        </ul>
+    </div>
+    <div id="sceneDiv"></div>
+
+</div>
+</body>
+
+</html>
