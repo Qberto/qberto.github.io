@@ -1,0 +1,431 @@
+<a class="anchor" id="paths"></a>
+<style>
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+ 
+  .title.title-right{
+    margin-right: 2%;
+ margin-left: 2%;
+  }
+  .line{
+    width: 5.5rem;
+    
+  }
+
+.title{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+}
+.title.title-right{
+  justify-content: flex-end;
+}
+.line{  
+  width: 5%;
+  height: 1px;
+  background-color: #000;
+  margin-right: 1em;
+ margin-left: 1em;
+ margin-top: .575em;
+}
+.line1.line-right{
+  order: 2;
+  margin-right: 0;
+  margin-left: 1em;
+}
+
+
+.span123 { 
+    display:inline-block;
+    width: 700px;
+    word-wrap: none;
+}
+p { 
+font-weight: 200; 
+  font: "Avenir Next", serif;
+ 
+}
+
+
+.span123 { 
+    display:inline-block;
+    width: 700px;
+    word-wrap: none;
+}
+
+.span123 { 
+    display:inline-block;
+    width: 700px;
+    word-wrap: none;
+}
+
+@media screen and (max-width: 600px) {
+ .span123 {
+    width: 320px;
+  }
+}
+
+ 
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+a:link {
+color: #0764d3;
+text-decoration: none;
+}
+
+a:hover {
+color: #167ec4;
+text-decoration: none;
+}
+
+.choosetext3 {
+font-size: 36px;
+font-weight: 400;
+letter-spacing: 6px;
+width: 100%;
+margin-left: 15px;}
+
+
+  .line{
+    width: 5.5rem;
+  }
+
+.title{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+}
+ 
+
+
+.content-wrapper1 {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0.5rem;
+  
+}
+
+.news-card1 {
+  border: 1px solid black;
+  margin: 0.75rem;
+  position: relative;
+  height: 30rem;
+  overflow: hidden;
+  border-radius: 0rem;
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  transform: translate(0px, -2px);
+    -webkit-box-shadow: 10px 15px 25px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 10px 15px 25px rgba(0, 0, 0, .8);
+     box-shadow: 10px 15px 25px rgba(0, 0, 0, .8);
+     transition: all .3s ease-out; 
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  margin-top: 0.75rem%;
+ }
+
+.news-card1:hover {
+ transform: translate(0px, 0px);
+    -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 0px rgba(0,0,0,.8);
+     box-shadow: 0px 0x 0px rgba(0,0,0,.8);
+     transition: all .3s ease-out; 
+}
+
+ .news-card1::before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.6) 100%); 
+  z-index: 0;
+}
+
+.news-card__card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.news-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 3s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.news-card__text-wrapper {
+  position: absolute;
+  bottom: 0rem;
+  padding: 1rem;
+  color: white;
+  transition: background-color 1.5s ease;
+}
+
+.news-card__title {
+  color: #fff;
+  transition: color 1s ease;
+  margin-bottom: .5rem;
+  }
+ 
+
+.news-card__post-date {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.news-card__details-wrapper {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 1.5s ease, opacity 1s ease;
+  font-size: 1.7rem; 
+}
+
+.news-card1:hover .news-card__details-wrapper {
+  max-height: 35rem;
+  
+  opacity: 1;
+}
+
+.news-card1:hover .news-card__text-wrapper {
+  background-color: rgba(0, 0, 0, 0.65);
+width: 100%;}
+    
+.news-card1:hover .news-card__title {
+  color: #fff;
+}
+    
+.news-card1:hover .news-card__image {
+  transform: scale(1);
+  z-index: -1;
+}
+  
+.news-card__excerpt {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a.news-card__read-more i {
+  position: relative;
+  background: black;
+  color: #eb1313;
+  left: 0.2rem;
+  transition: left 0.5s ease, color 0.6s ease;
+}
+
+a.news-card__read-more {
+  background: black;
+  color: #ffffff;
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: 1px solid #fff;
+  font-size: 16px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-decoration: none;
+  width: 8.5rem;
+  margin-left: auto;
+  position: relative;
+  z-index: 5;
+}
+
+a.news-card__read-more:hover {
+  background: white;
+  color: #000000;
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  border: 1px solid #fff;
+  font-size: 16px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-decoration: none;
+  margin-left: auto;
+  position: relative;
+  z-index: 5;
+}
+
+
+@media (max-width: 1299px;) {
+
+.news-card__text-wrapper {
+ pointer-events: none;
+ }
+
+.content-wrapper1 {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+ }
+
+.news-card1 {
+ min-width: 400px;
+ }
+}
+
+a.card-chapter {
+  color: #fff;
+}
+
+a.card-chapter:hover {
+  color: #e3f3ff;
+}
+
+@media (max-width: 1099px;) {
+
+.news-card__text-wrapper {
+ pointer-events: none;
+ }
+
+.content-wrapper1 {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+ }
+
+.news-card1 {
+ min-width: 350px;
+ }
+}
+
+</style>
+<section style="background-color:transparent;" class="layout-section ember-view">  
+  <div class="container-fluid  wideRowClass">
+    <div class="bs-row row ember-view">  
+      <div class="col-sm-12 ember-view">  
+        <div class="markdown-card ember-view">   
+ 
+          <div id="paths-start" class="title title-right">
+            <span class="line"></span><h3 style="text-align: center; font-size: 48px;">LEARN PATHS</h3>
+          </div>
+
+
+
+</div>
+</div>
+</div>
+
+      <div class="bs-row row ember-view">  <div class="col-sm-12 ember-view">  <div class="markdown-card ember-view">   
+ 
+<div class="content-wrapper1"> 
+
+<div class="news-card1">
+   <img src="https://learn.arcgis.com/cdn/card-catalog/uploads/playlists/arcgis-pro-500x375-3.jpg" alt="" class="news-card__image">
+
+<div class="news-card__text-wrapper"><h5 class="news-card__title"><a class="card-chapter" href="/pages/section-3">Analysis in ArcGIS Pro</a></h5>
+<div class="news-card__details-wrapper">
+<a class="card-chapter" href="/pages/section-3"><p class="news-card__excerpt"></p>
+
+<p>Use geoprocessing tools, build models, and explore geostatistical analysis and machine learning in ArcGIS Pro</p><p></p></a>
+<a href="https://learn.arcgis.com/en/paths/analysis-in-arcgis-pro/" class="news-card__read-more">EXPLORE</a>
+
+</div>
+</div>
+</div>
+
+<div class="news-card1">
+  <img src="https://learn.arcgis.com/cdn/card-catalog/uploads/playlists/get-started-with-arcgis-enterprise-builder.png" alt="" class="news-card__image">
+
+<div class="news-card__text-wrapper"><h5 class="news-card__title"><a class="card-chapter" href="/pages/section-1">Try Machine Learning in ArcGIS</a></h5><div class="news-card__details-wrapper">
+<a class="card-chapter" href="/pages/section-1">  <p class="news-card__excerpt"></p>
+<p>Esri’s continued advancements in data storage, as well as parallel and distributed computing, make solving problems at the intersection of machine learning and GIS increasingly possible.</p><p></p></a>
+
+<a href="https://learn.arcgis.com/en/paths/try-machine-learning-with-arcgis/" class="news-card__read-more">EXPLORE</a>
+
+</div>
+</div>
+</div>
+
+<div class="news-card1">
+  <img src="https://learn.arcgis.com/cdn/card-catalog/uploads/cards/interpolate-3D-oxygen-measurements-in-monterey-bay.png" alt="" class="news-card__image">
+
+<div class="news-card__text-wrapper"><h5 class="news-card__title"><a class="card-chapter" href="/pages/section-2">Geostatistics in ArcGIS Pro</a></h5><div class="news-card__details-wrapper">
+<a class="card-chapter" href="/pages/section-2">  <p class="news-card__excerpt"></p>
+<p>Use interpolation to predict values continuously across your study area.</p>
+<p></p></a>
+
+<a href="https://learn.arcgis.com/en/paths/geostatistics-in-arcgis-pro/" class="news-card__read-more">EXPLORE</a>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="news-card1">
+   <img src="https://learn.arcgis.com/cdn/card-catalog/uploads/playlists/dist-analytics-for-big-data-small.jpg" alt="" class="news-card__image">
+
+<div class="news-card__text-wrapper"><h5 class="news-card__title"><a class="card-chapter" href="/pages/section-4">Distributed analytics for big data</a></h5>
+<div class="news-card__details-wrapper">
+<a class="card-chapter" href="/pages/section-4"><p class="news-card__excerpt"></p>
+
+<p>ArcGIS GeoAnalytics Server provides a distributed computing framework that powers a collection of analysis tools for analyzing large volumes of vector and tabular data.</p><p></p></a>
+<a href="https://learn.arcgis.com/en/paths/distributed-analytics-for-big-data/" class="news-card__read-more">EXPLORE</a>
+
+</div>
+</div>
+</div>
+
+
+<div class="news-card1">
+   <img src="https://learn.arcgis.com/cdn/card-catalog/uploads/playlists/card-image-vote-stickers.png" alt="" class="news-card__image">
+
+<div class="news-card__text-wrapper"><h5 class="news-card__title"><a class="card-chapter" href="/pages/section-5">Make every vote count!</a></h5>
+<div class="news-card__details-wrapper">
+<a class="card-chapter" href="/pages/section-5"><p class="news-card__excerpt"></p>
+
+<p>How GIS impacts voter turnout, election analysis, and congressional redistricting.</p><p></p></a>
+<a href="https://learn.arcgis.com/en/paths/winning-campaigns/" class="news-card__read-more">EXPLORE</a>
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+ 
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+</section>
